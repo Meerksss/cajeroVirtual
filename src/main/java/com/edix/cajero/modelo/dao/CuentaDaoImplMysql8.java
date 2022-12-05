@@ -1,4 +1,4 @@
-package com.edix.cajero.modleo.dao;
+package com.edix.cajero.modelo.dao;
 
 import java.util.List;
 
@@ -26,9 +26,16 @@ public class CuentaDaoImplMysql8 implements CuentaDao{
 	 */
 	@Override
 	public Cuenta findById(int idCuenta) {
-		// TODO Auto-generated method stub
-		return crepo.findById(idCuenta).orElse(null);
+		Cuenta cuenta = new Cuenta();
+		cuenta.setIdCuenta(idCuenta);
+		int pos = crepo.findAll().indexOf(cuenta);
+		if (pos == -1) {
+			return null;
+		} else {
+			return crepo.findById(idCuenta).orElse(null);
+		}
 	}
+
 	
 	@Override
 	public int ingresarDinero(Cuenta cuenta, double cantidad) {

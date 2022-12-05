@@ -1,4 +1,4 @@
-package com.edix.cajero.modleo.dao;
+package com.edix.cajero.modelo.dao;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ public interface MovimientoDao {
 	
 	List<Movimiento> buscarTodos(); // Método que lista todos los movimientos
 	Movimiento buscarUno(int idMovimiento); // Método que localiza un movimiento por el idMovimiento
-	List<Movimiento> listaUltimosMovimientos(int idCuenta); // Método que muestra el listado de los últimos movimientos
+	List<Movimiento> listaUltimosMovimientosByidCuenta(int idCuenta); // Método que muestra el listado de los últimos movimientos
 	int movimientoExtraccion(Cuenta cuenta, double cantidad); // Método que permite crear un movimiento que extrae dinero de una cuenta
 	int movimientoIngreso(Cuenta cuenta, double cantidad); // Método que permite crear un movimiento que ingrese dinero en una cuenta
 	

@@ -1,4 +1,4 @@
-package com.edix.cajero.modleo.dao;
+package com.edix.cajero.modelo.dao;
 
 import java.util.List;
 

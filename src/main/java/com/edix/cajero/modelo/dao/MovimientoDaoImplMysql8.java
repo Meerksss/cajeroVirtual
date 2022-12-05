@@ -1,4 +1,4 @@
-package com.edix.cajero.modleo.dao;
+package com.edix.cajero.modelo.dao;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -40,7 +40,7 @@ public class MovimientoDaoImplMysql8 implements MovimientoDao {
 	 * Hemos fijado que muestre un listado máximo de 10 movimientos.
 	 */
 	@Override
-	public List<Movimiento> listaUltimosMovimientos(int idCuenta) {
+	public List<Movimiento> listaUltimosMovimientosByidCuenta(int idCuenta) {
 		
 		List<Movimiento> lista=new ArrayList<Movimiento>();
 		int contador = 0;
@@ -86,7 +86,21 @@ public class MovimientoDaoImplMysql8 implements MovimientoDao {
 	@Override
 	public int movimientoIngreso(Cuenta cuenta, double cantidad) {
 		// TODO Auto-generated method stub
-		return 0;
+		Movimiento movimiento = new Movimiento();
+		movimiento.setCuenta(cuenta);
+		movimiento.setFecha(new Date());
+		movimiento.setOperacion("Ingreso");
+		movimiento.setCantidad(cantidad);
+		
+		// Ahora añadimos el movimiento a la lista de movimientos
+		int filas = 0;
+		try {
+			mrepo.save(movimiento);
+			filas = 1;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return filas;
 	}
 
 }
