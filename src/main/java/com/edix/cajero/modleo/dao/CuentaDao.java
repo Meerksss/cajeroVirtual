@@ -10,9 +10,9 @@ import com.edix.cajero.modelo.entitybeans.Cuenta;
 
 public interface CuentaDao {
 	
-	List<Cuenta> findAll(); // Encontrar todas las cuentas
-	Cuenta findById(int idCuenta); // Encontrar la cuenta por el idCuenta
-	int ingresarDinero(Cuenta cuenta, double cantidad); // Ingresar dinero a una cuenta
-	int extraerDinero(Cuenta cuenta, double cantidad); // Retirar dinero de una cuenta
+	List<Cuenta> findAll(); // Método que lista todas las cuentas
+	Cuenta findById(int idCuenta); // Método que localiza la cuenta por el idCuenta
+	int ingresarDinero(Cuenta cuenta, double cantidad); // Método que permite realizar un ingreso a una cuenta
+	int extraerDinero(Cuenta cuenta, double cantidad); // Método que permite retirar dinero de una cuenta
 
 }

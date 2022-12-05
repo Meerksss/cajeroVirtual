@@ -9,7 +9,14 @@ import com.edix.cajero.modelo.entitybeans.Cuenta;
 import com.edix.cajero.repository.CuentaRepository;
 
 @Controller
-public class CuentaController {
+public class CajeroController {
+	
+	/*
+	 * Pruebas que hice para ver si muestra la cuenta. y funciona. 
+	 * 
+	 * ¡¡¡ Recordatorio !!!
+	 * ESTO NO LO PIDE LA TAREA. HAY QUE QUITARLO Y AÑADIR LO QUE PIDE.
+	 */
 	
 	@Autowired
 	private CuentaRepository crepo;
